@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <cstdlib>
 
 #include "Utils.hpp"
 
@@ -7,6 +8,7 @@ int main(int argc, char** argv)
 {
 
     std::string fileName = argv[1];
+    unsigned pixelSize = atoi(argv[2]);
 
 
     sf::Image image;
@@ -19,9 +21,14 @@ int main(int argc, char** argv)
     unsigned width  = image.getSize().x;
     unsigned height = image.getSize().y;
 
+
+
+    if(!sizeIsValid(width, height, pixelSize))
+        return -1;
+
     output.create(width, height, sf::Color::Transparent);
 
-    unsigned pixelSize = 15; // Fixed for now
+
 
 
     std::vector<sf::Vector2u> pos;

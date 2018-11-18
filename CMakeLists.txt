@@ -1,9 +1,9 @@
 cmake_minimum_required (VERSION 2.6)
-project (Pixelator)
+project (Pixelor)
 
 # The version number.
-set (Pixelator_VERSION_MAJOR 1)
-set (Pixelator_VERSION_MINOR 0)
+set (Pixelor_VERSION_MAJOR 1)
+set (Pixelor_VERSION_MINOR 1)
 
 #
 set(CMAKE_CXX_STANDARD 14)
@@ -12,7 +12,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 
 # Finds SFML package
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMakeModules" ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 find_package(SFML REQUIRED graphics window system)
 
 
