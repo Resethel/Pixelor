@@ -1,5 +1,28 @@
-
+/*
+ *
+ *
+ */
 #include "Utils.hpp"
+
+
+
+
+float euclidianDistance(sf::Vector3f& vA, sf::Vector3f& vB)
+{
+    return(sqrt(pow(vA.x - vB.x, 2)+
+                pow(vA.y - vB.y, 2)+
+                pow(vA.z - vB.z, 2)));
+}
+
+float euclidianDistance(sf::Color& cA, sf::Color& cB)
+{
+    auto a = sf::Vector3f(cA.r, cA.g, cA.b);
+    auto b = sf::Vector3f(cB.r, cB.g, cB.b);
+    
+    return(euclidianDistance(a,b));
+}
+
+
 
 
 

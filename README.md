@@ -11,15 +11,19 @@ On Ubuntu:
 
 ```sh
 sudo apt-get install libsfml-dev
+cmake <path-to-source>
+make
 ```
 
 On OSX with [Homebrew](https://brew.sh/):
 ```sh
 brew install sfml
+cmake <path-to-source>
+make
 ```
 
 ## Run
 ```sh
-./Pixelors <path-to-image> <pixel-size>
+./Pixelor <path-to-image> <pixel-size>
 ```
 Note: Both the width and the height of the image must be divisible by the pixel-size

@@ -3,6 +3,7 @@
 #include <cstdlib>
 
 #include "Utils.hpp"
+#include "Quantization.hpp"
 
 int main(int argc, char** argv)
 {
@@ -11,15 +12,15 @@ int main(int argc, char** argv)
     unsigned pixelSize = atoi(argv[2]);
 
 
-    sf::Image image;
+    sf::Image rawImage;
     sf::Image output;
 
 
-    if(!image.loadFromFile(fileName))
+    if(!rawImage.loadFromFile(fileName))
         return -1;
 
-    unsigned width  = image.getSize().x;
-    unsigned height = image.getSize().y;
+    unsigned width  = rawImage.getSize().x;
+    unsigned height = rawImage.getSize().y;
 
 
 
@@ -29,6 +30,8 @@ int main(int argc, char** argv)
     output.create(width, height, sf::Color::Transparent);
 
 
+    // Quantizing ...
+    sf::Image image = randomQuantize(rawImage, 64);
 
 
     std::vector<sf::Vector2u> pos;

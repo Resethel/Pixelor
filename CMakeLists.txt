@@ -22,8 +22,11 @@ add_executable(
 
     ${PROJECT_NAME}
     src/Utils.hpp
+    src/Quantization.hpp
+    src/Quantization.cpp
     src/Utils.cpp
     src/Main.cpp
+
 
 )
 
