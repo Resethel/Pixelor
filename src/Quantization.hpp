@@ -8,8 +8,9 @@
 #include <SFML/Graphics.hpp>
 
 #include "Utils.hpp"
+#include "KMeans.hpp"
 
 
 
-
-sf::Image randomQuantize(sf::Image image, unsigned nColors);
+sf::Image quantize_random(sf::Image image, unsigned nColors);
+sf::Image quantize_KMeans(sf::Image image, unsigned nColors);

@@ -31,13 +31,13 @@ int main(int argc, char** argv)
 
 
     // Quantizing ...
-    sf::Image image = randomQuantize(rawImage, 64);
+    sf::Image image = quantize_KMeans(rawImage, 64);
 
 
     std::vector<sf::Vector2u> pos;
 
-    for(int x(0) ; x < width/pixelSize ; x++)
-    for(int y(0) ; y < height/pixelSize ; y++)
+    for(size_t x(0) ; x < width/pixelSize ; x++)
+    for(size_t y(0) ; y < height/pixelSize ; y++)
     {
         pos.emplace_back(x,y);
     }
@@ -53,8 +53,8 @@ int main(int argc, char** argv)
         colors.clear();
 
 
-        for(int dx(0) ; dx < pixelSize ; dx++)
-        for(int dy(0) ; dy < pixelSize ; dy++)
+        for(unsigned dx(0) ; dx < pixelSize ; dx++)
+        for(unsigned dy(0) ; dy < pixelSize ; dy++)
         {
             colors.push_back(image.getPixel( X * pixelSize + dx,
                                               Y * pixelSize + dy));
@@ -77,8 +77,8 @@ int main(int argc, char** argv)
                             uint8_t(b / tot));
 
         // Sets the pixelColor
-        for (int dx(0) ; dx < pixelSize ; dx++)
-        for (int dy(0) ; dy < pixelSize ; dy++)
+        for (size_t dx(0) ; dx < pixelSize ; dx++)
+        for (size_t dy(0) ; dy < pixelSize ; dy++)
         {
             output.setPixel( X * pixelSize + dx,
                              Y * pixelSize + dy,
