@@ -18,7 +18,7 @@ float euclidianDistance(sf::Color& cA, sf::Color& cB)
 {
     auto a = sf::Vector3f(cA.r, cA.g, cA.b);
     auto b = sf::Vector3f(cB.r, cB.g, cB.b);
-    
+
     return(euclidianDistance(a,b));
 }
 

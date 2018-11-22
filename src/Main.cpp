@@ -31,7 +31,7 @@ int main(int argc, char** argv)
 
 
     // Quantizing ...
-    sf::Image image = quantize_KMeans(rawImage, 64);
+    sf::Image image = quantize_Hist(rawImage, 64);
 
 
     std::vector<sf::Vector2u> pos;

@@ -24,6 +24,8 @@ add_executable(
     src/Utils.hpp
     src/Quantization.hpp
     src/Quantization.cpp
+    src/Histogram.hpp
+    src/Histogram.cpp
     src/KMeans.hpp
     src/KMeans.cpp
     src/Utils.cpp
